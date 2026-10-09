@@ -1,11 +1,12 @@
 Author: Sanjay Pachan Maheshwari
 
-My partner is Sebastian Emmanuel Soon, [portfolio link](https://github.com/partner/iot-portfolio)
-              Jomarie Chris Manuel,
+My partner is, - Sebastian Emmanuel Soon, [portfolio link]()
+              - Jomarie Chris Manuel, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
 
 In my team for the final project, I also had the following members:
-- <replace these pointy brackets with their full name>, [portfolio link](https://github.com/partner/iot-portfolio)
-- <replace these pointy brackets with their full name>, [portfolio link](https://github.com/partner/iot-portfolio)
+- Rayan Slassi, [portfolio link](https://github.com/rayansls/Databases)
+- Jonathan Behring, [portfolio link](https://github.com/Jonathan-T-B/databasesclass)
+- Aron Grudaj, [portfolio link]( https://github.com/AronGrudaj/Databases-Portfolio)
 
 Our team final project repository is [here](https://github.com/somewhere/final-iot-project)
 
