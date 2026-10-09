@@ -2,9 +2,16 @@
 ## Task Inspirations
 
 - Inspiration 1
+<<<<<<< HEAD
     I want to learn how to save simple data, like a machine's battery level, directly inside the machine itself instead of sending it to the internet.
 - Inspiration 2
     I plan to explore building a local database to log print times, nozzle temperatures, and error codes for a 3D printer, storing the data directly on its control board.
+=======
+  I want to learn how to save simple data, like a machine's battery level, directly inside the machine itself instead of sending it to the internet.
+  
+- Inspiration 2
+  I plan to explore building a local database to log print times, nozzle temperatures, and error codes for a 3D printer, storing the data directly on its control board.
+>>>>>>> 7e931ed1aec7d2b4d260b8881d59b4929f3c7a9a
 
 ## Task Personal Profile
 
