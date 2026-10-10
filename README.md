@@ -1,4 +1,6 @@
 Author: Sanjay Pachan Maheshwari
+Student ID: 50215829
+Student email: maheshwari.sanjay_pachan@hsbi.de
 
 My partner is, - Sebastian Emmanuel Soon, [portfolio link]()
               - Jomarie Chris Manuel, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
