@@ -43,7 +43,28 @@ erDiagram
         string name PK
     }
 ```
+#### 3. Determine Cardinalities with Counts
+**Proving the m:n (Many-to-Many) relationship between Jobs and Parts:**
+```sql
+SELECT job_id, parts_used,
+       LENGTH(parts_used) - LENGTH(REPLACE(parts_used, ',', '')) + 1 AS n_parts
+FROM maint_job;
+```
+Proof: Job 1 returns 2 for n_parts. This proves a single job uses multiple parts. Since a part (like P-1001) also appears in multiple jobs (Job 1 and Job 3), this is mathematically a many-to-many (m:n) relationship.
 
+Proving the 1:n (One-to-Many) relationship between Machines and Jobs:
+SELECT machine_name, COUNT(*) as job_count 
+FROM maint_job 
+GROUP BY machine_name;
+
+Proof: The output shows cnc-01 has 2 jobs (Job 1 and Job 4). A machine has many jobs, but a specific job record only belongs to one machine.
+
+#### 4. Modeled vs. Hidden Cardinalities
+1:n (One-to-Many): This is modeled in the schema via the machine_name and technician columns inside the maint_job table, though poorly executed without actual foreign key constraints.
+
+m:n (Many-to-Many): This is hidden inside a single comma-separated text string (parts_used), entirely violating First Normal Form (1NF) by failing to use a proper junction table.
+
+1:1 (One-to-One): This is hidden/absent; there are no explicit one-to-one relationships modeled in this current schema design.
 
 ### Task 2: Integrity Defects
 
