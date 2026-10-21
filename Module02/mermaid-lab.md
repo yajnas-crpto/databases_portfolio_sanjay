@@ -6,21 +6,22 @@
 **What makes it good:** It perfectly visualizes how a Many-to-Many relationship (Students to Courses) must be physically resolved in a database using a junction table (`ENROLLMENT`). It bridges conceptual design with physical reality.
 ```mermaid
 erDiagram
-STUDENT ||--o{ ENROLLMENT : "registers"}
-COURSE ||--o{ ENROLLMENT : "contains"}
-STUDENT {
-    int student_id PK
-    string name
-}
-COURSE {
-    int course_id PK
-    string title
-}
-ENROLLMENT {
-    int student_id PK, FK
-    int course_id PK, FK
-    date enrolled_on
-}
+    STUDENT ||--o{ ENROLLMENT : "registers"
+    COURSE ||--o{ ENROLLMENT : "contains"
+
+    STUDENT {
+        int student_id PK
+        string name
+    }
+    COURSE {
+        int course_id PK
+        string title
+    }
+    ENROLLMENT {
+        int student_id PK, FK
+        int course_id PK, FK
+        date enrolled_on
+    }
 ```
 ### The Strange: Recursive Relationship
 **What makes it strange:** An entity pointing to itself. It looks like an infinite loop, but it is the standard way to model organizational hierarchies (an Employee is managed by another Employee).
@@ -37,11 +38,11 @@ EMPLOYEE {
 ### The Confusing/Wrong: The Forced Ternary
 **What makes it confusing:** Mermaid `erDiagram` only supports binary relationships (connecting two boxes). When people try to model a Ternary relationship (Supplier provides Part to Project) without a central junction table, they often draw a triangle of relationships. This implies independent connections rather than a single unified transaction.
 
-```mermaid
+```mermaid 
 erDiagram
-SUPPLIER }o--o{ PART : "supplies"
-PART }o--o{ PROJECT : "used_in"
-PROJECT }o--o{ SUPPLIER : "buys_from"}
+    SUPPLIER }o--o{ PART : "supplies"
+    PART }o--o{ PROJECT : "used_in"
+    PROJECT }o--o{ SUPPLIER : "buys_from"
 ```
 ## 2. Schema ↔ Diagram AI Round-Trip
 
