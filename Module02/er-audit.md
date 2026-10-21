@@ -143,3 +143,17 @@ CREATE TABLE job_part (
 **Constraint Enforcement Decision:**
 *   **Enforced in the Model (Pydantic):** The `serial_no` prefix check (ensuring it starts with "SN-"). *Why:* Formatting rules and business logic are best caught at the application layer, allowing the app to instantly show a helpful error message to the user before touching the database.
 *   **Enforced in the Database (SQLAlchemy):** The `UNIQUE` constraint on `serial_no` and the `FOREIGN KEY` constraints. *Why:* Structural data integrity must be guaranteed at the lowest storage level. If someone bypasses the Python app and writes directly to the database, these constraints ensure the data cannot be corrupted.
+
+### Task 4 (Stretcher): Model Inheritance
+
+**Alternative 1: One table with a discriminator column (Single Table)**
+```sql
+CREATE TABLE machine_single (
+    machine_id INTEGER PRIMARY KEY,
+    serial_no TEXT NOT NULL,
+    machine_type TEXT NOT NULL,  -- Discriminator: 'CNC' or 'Molder'
+    axes INTEGER,                -- CNC only (must allow NULL)
+    clamping_force_tons INTEGER  -- Molder only (must allow NULL)
+);
+```
+
