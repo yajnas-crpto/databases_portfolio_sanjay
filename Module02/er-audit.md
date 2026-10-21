@@ -42,6 +42,8 @@ erDiagram
     TECHNICIAN {
         string name PK
     }
+```
+
 
 ### Task 2: Integrity Defects
 
