@@ -81,3 +81,44 @@ JOIN part p ON p.part_no = j.parts_used;   -- the list is not a key
 -- multi-part job — and reports success while doing it. That silence is the defect.
 Result:2|Coolant filter3|Ball bearing 6203
 Production Impact: A naive join on a comma-separated list silently drops jobs with multiple parts (like Job 1), making complex maintenance work completely invisible in cost and part-usage analysis.
+
+### Task 3: Data Contract
+
+**Emitted Corrected DDL:**
+sql
+CREATE TABLE machine (
+machine_id INTEGER NOT NULL,
+serial_no VARCHAR NOT NULL,
+site VARCHAR NOT NULL,
+installed DATE NOT NULL,
+PRIMARY KEY (machine_id),
+CONSTRAINT uq_machine_serial UNIQUE (serial_no)
+) ;
+
+CREATE TABLE part (
+        part_no VARCHAR NOT NULL, 
+        description VARCHAR NOT NULL, 
+        unit_price NUMERIC(9, 2) NOT NULL, 
+        PRIMARY KEY (part_no)
+) ;
+
+CREATE TABLE maint_job (
+        job_id INTEGER NOT NULL, 
+        machine_id INTEGER NOT NULL, 
+        technician VARCHAR NOT NULL, 
+        done_on DATE NOT NULL, 
+        PRIMARY KEY (job_id), 
+        FOREIGN KEY(machine_id) REFERENCES machine (machine_id)
+) ;
+
+CREATE TABLE job_part (
+        job_id INTEGER NOT NULL, 
+        part_no VARCHAR NOT NULL, 
+        PRIMARY KEY (job_id, part_no), 
+        FOREIGN KEY(job_id) REFERENCES maint_job (job_id), 
+        FOREIGN KEY(part_no) REFERENCES part (part_no)
+) ;
+
+**Constraint Enforcement Decision:**
+*   **Enforced in the Model (Pydantic):** The `serial_no` prefix check (ensuring it starts with "SN-"). *Why:* Formatting rules and business logic are best caught at the application layer, allowing the app to instantly show a helpful error message to the user before touching the database.
+*   **Enforced in the Database (SQLAlchemy):** The `UNIQUE` constraint on `serial_no` and the `FOREIGN KEY` constraints. *Why:* Structural data integrity must be guaranteed at the lowest storage level. If someone bypasses the Python app and writes directly to the database, these constraints ensure the data cannot be corrupted.
