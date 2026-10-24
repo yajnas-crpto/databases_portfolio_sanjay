@@ -2,9 +2,10 @@ Author: Sanjay Pachan Maheshwari
 Student ID: 50215829
 Student email: maheshwari.sanjay_pachan@hsbi.de
 
-My partner is, - Sebastian Emmanuel Soon, [portfolio link]()
-              - Jomarie Chris Manuel, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
-
+My partner is, - Sebastian Emmanuel Soon, [portfolio link](https://github.com/Emannual20/databases-portfolio/tree/main)
+               - Jomarie Chris Manuel, [portfolio link](https://github.com/jmanuel08/database-jomportfolio)
+               - Myo Min Lin, [portfolio link].(https://github.com/mmlin801597/databases-portfolio/tree/main)
+               
 In my team for the final project, I also had the following members:
 - Rayan Slassi, [portfolio link](https://github.com/rayansls/Databases)
 - Jonathan Behring, [portfolio link](https://github.com/Jonathan-T-B/databasesclass)
