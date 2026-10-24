@@ -31,10 +31,45 @@
 
 **Sketch 1: The Many-to-Many Junction Table**
 * **Source:** Wikipedia / General DB Tutorials
-* **Screenshot:** *(Insert Screenshot of a standard M:N resolution diagram here)*
+```mermaid
+erDiagram
+    STUDENT ||--o{ ENROLLMENT : "has"
+    COURSE ||--o{ ENROLLMENT : "contains"
+    
+    STUDENT {
+        int student_id PK
+        string name
+    }
+    COURSE {
+        string course_code PK
+        string title
+    }
+    ENROLLMENT {
+        int student_id PK, FK
+        string course_code PK, FK
+        string grade
+    }
+```
+
 * **What I learned:** This diagram clearly showed that an M:N relationship isn't drawn as a direct line in a physical schema. Instead, it showed a junction table in the middle, with two `1:N` relationships pointing *inward* toward the junction table. This perfectly visualizes how we need to fix the `parts_used` column.
 
 **Sketch 2: Attribute vs. Entity Breakdown**
 * **Source:** diagrams.net ER templates
-* **Screenshot:** *(Insert Screenshot of an Address/Location split here)*
+```mermaid
+    erDiagram
+    COMPANY ||--o{ SITE_ADDRESS : "operates at"
+    
+    COMPANY {
+        int company_id PK
+        string name
+    }
+    SITE_ADDRESS {
+        int site_id PK
+        int company_id FK
+        string street
+        string zip_code
+        string manager_name
+        string timezone
+    }
+```
 * **What I learned:** It showed when an attribute becomes too complex and needs to become its own entity. If a property (like a 'Site' or 'Address') starts needing its own properties (zip code, manager, timezone), it must be broken out into a separate entity rather than staying as a text column.
