@@ -1,0 +1,13 @@
+# Module 2 Reflection
+
+My biggest takeaway from Module 2 is that reading and understanding a legacy database schema is just as critical as writing a new one. I had a major breakthrough in understanding how relational tables connect: realizing that a Foreign Key is simply a Primary Key visiting another table to create a link (like a product barcode sitting on a checkout receipt). My advice to myself is to always ground my understanding in these core physical structures rather than just staring at the raw SQL syntax.
+
+What went really well this week was the technical execution. After all the environment and setup difficulties I had during Module 1, my VS Code and PC are now fully optimized. Because my local environment was already dialed in, running the Python data contract (Pydantic and SQLAlchemy) using `uv` to generate the repaired schema felt smooth and manageable. 
+
+The main difficulty for me was that I was out of town and absent for the live lecture. I proactively informed the professor about my absence, but missing the live pod discussion meant I had to grapple with the concepts on my own initially. I hit some PowerShell syntax errors when trying to build the `legacy.db` from the terminal, and I struggled at first to understand why a comma-separated list in the `parts_used` column was such a severe defect.
+
+However, those struggles led to some great exploration. I figured out how to bypass the PowerShell errors by creating a dedicated `setup.sql` script instead of relying on the command line. It was also a massive "a-ha!" moment to finally understand that storing a list in a single column violates First Normal Form (1NF) and completely breaks standard SQL `JOIN` capabilities, silently dropping data.
+
+My interaction with my peers was incredibly valuable, even though it was asynchronous. I coordinated with my teammates over the week to catch up on everything I missed so I would be fully prepared for the upcoming Module 3 lecture. 
+
+In terms of help and extra work, my pod members helped me immensely by sharing their conceptual findings and Sebastian posted the final ER diagrams to our wataspp group, which allowed me to sync up and verify my independent work. To ensure I didn't fall behind due to my absence, I put in extra work by tackling both stretcher tasks, modeling EER inheritance two different ways and documenting a deep dive into Mermaid diagram edge cases.
