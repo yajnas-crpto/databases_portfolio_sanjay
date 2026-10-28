@@ -46,7 +46,11 @@ $\sigma_{technician='Beier'}(maint\_job)$
 * **LLM Comparison**: I asked Gemini to translate the same query. We completely agreed on using the selection operator ($\sigma$) for the WHERE clause. The only difference in our approach was a minor learning point: the LLM pointed out that the projection operator ($\pi$) is usually omitted entirely when the SQL query uses SELECT *.
 
 ## Task C: Pod Discussion
-Our pod shared these notes and verified that our local SQLite plans matched the expected behavior. We agreed that covering indexes are the most powerful tool for speeding up read-heavy queries.
+* **Plan Comparison**: Our Windows SQLite plan matched the macOS SQLite plan from the neighboring pod; both correctly used SEARCH for direct equality matches.   
+* **The Index Surprise (Our Pod)**: Wrapping an indexed column in a function (like upper(technician)) entirely defeats the index, forcing a full SCAN.   
+* **The Index Surprise (Neighboring Pod)**: Leading wildcards (LIKE '%ei%') also force a SCAN because the engine cannot use the B-tree's alphabetical sorting. Also, asking for unindexed columns breaks a "covering" index, forcing the engine to visit the main table.   
+* **Unresolved Question for Discord**: If functions and wildcards break indexes, how do we efficiently optimize case-insensitive searches or partial text matches in SQLite? 
+
 
 
 
