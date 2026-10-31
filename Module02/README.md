@@ -3,11 +3,12 @@
 This module covers the *Conceptual Database Design* and *requirements analysis* phases by auditing an undocumented, flawed schema, reconstructing its intended ER model, and formalizing it into a code-first data contract.
 
 ## 🎯 Learning Goals
-1. Reconstruct an **ER/EER model** (entities, attributes, keys, relationships, cardinalities) from an undocumented SQL schema.
-2. Identify **integrity defects** — missing foreign keys, orphan rows, redundant data, normalization violations — with queries, not intuition.
-3. Distinguish an **entity relationship** from an attribute, and a **surrogate key** from a natural key, and justify the choice.
-4. Express a schema as a **code-first data contract** (Pydantic / SQLAlchemy) that an application can enforce.
-5. Write the **requirements the schema forgot**: the business rules nobody encoded.
+1. Reconstruct an **[ER/EER model](./mermaid-lab.md)** (entities, attributes, keys, relationships, cardinalities) from an undocumented SQL schema.
+2. Identify **[integrity defects](./er-audit.md)** — missing foreign keys, orphan rows, redundant data, normalization violations — with queries, not intuition.
+3. Distinguish an **[entity relationship](./study-log.md)** from an attribute, and a **surrogate key** from a natural key, and justify the choice.
+4. Express a schema as a **[code-first data contract](./contract.py)** (Pydantic / SQLAlchemy) that an application can enforce.
+5. Write the **[requirements the schema forgot](./er-audit.md)**: the business rules nobody encoded.
+
 
 ## 📝 Task Execution & Evidence
 

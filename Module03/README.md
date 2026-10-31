@@ -3,11 +3,11 @@
 This module covers advanced DQL querying, Query Optimization, and Relational Algebra. Instead of just writing SQL manually, the focus is on generating SQL with an LLM and using SQLite's `EXPLAIN QUERY PLAN` to prove the generated code is fast, correct, and secure against SQL injection.
 
 ## 🎯 Learning Goals
-1. Build complex **DQL** queries: joins, aggregation with `GROUP BY`/`HAVING`, subqueries, and window functions.
-2. Read **`EXPLAIN QUERY PLAN`** as *primary evidence*: say what the engine will do for a given query, tell a `SCAN` from a `SEARCH`, and a table lookup from a covering index.
-3. **Benchmark** the effect of an index and explain when the planner ignores one.
-4. Generate a query with an **LLM**, then **verify** it: correctness, performance, and edge cases.
-5. **Prevent SQL injection** with bound parameters and demonstrate why string concatenation is exploitable.
+1. Build complex **[DQL queries](./task1-profiling.md)**: joins, aggregation with `GROUP BY`/`HAVING`, subqueries, and window functions.
+2. Read **[`EXPLAIN QUERY PLAN`](./task1-profiling.md)** as *primary evidence*: say what the engine will do for a given query, tell a `SCAN` from a `SEARCH`, and a table lookup from a covering index.
+3. **[Benchmark](./benchmark-results.md)** the effect of an index and explain when the planner ignores one.
+4. Generate a query with an **[LLM, then verify it](./task1-profiling.md)**: correctness, performance, and edge cases.
+5. **[Prevent SQL injection](./injection_demo.py)** with bound parameters and demonstrate why string concatenation is exploitable.
 
 ## 📝 Task Execution & Evidence
 
