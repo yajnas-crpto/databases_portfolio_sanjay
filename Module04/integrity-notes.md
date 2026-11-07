@@ -9,7 +9,6 @@ was stored as text. SQLite only *tries* to convert values to the declared type:
 not a rule.
 
 **Hardest constraint to get right:** CHECK with NULL.
-[Replace this if your pod found a different one hardest.]
 A column with CHECK (value BETWEEN -273.15 AND 5000) still accepts NULL, because
 the check only rejects rows where the condition is false, and a comparison with
 NULL is "unknown". The fix is to add NOT NULL.
