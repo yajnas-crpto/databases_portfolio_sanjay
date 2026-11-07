@@ -6,8 +6,6 @@ sqlite> INSERT INTO sensor VALUES (1,'cnc-01','temp_c','degC'), (2,'cnc-01','vib
 sqlite> INSERT INTO reading(sensor_id, ts, value, interval_s) VALUES (1,'2026-03-01 08:00:00', 41.5, 1);
 sqlite> SELECT reading_id, value, interval_s, energy_j FROM reading;
 1|41.5|1|41.5
-
-Proof: The energy_j virtual column successfully auto-calculated 41.5 * 1 = 41.5.
 ```
 
 **Rejected: Domain check (impossible temperature):**
