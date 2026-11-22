@@ -1,10 +1,24 @@
-# Module 3 Reflection
+# Reflection 3 in Module 3
 
-My biggest takeaway this session is that generating code with an LLM creates a dangerous false sense of competence. The real engineering skill lies in testing and verifying that code. Moving forward, my advice to myself is to stop using the LLM as an autopilot to hit deadlines and instead use it strictly as a tutor to help me write the raw logic from scratch. I also want to firmly remember that `EXPLAIN QUERY PLAN` is the absolute truth—if the database engine says `SCAN`, the query is not optimized, regardless of what the stopwatch says. 
+### Key Take-Away & Advice
+- **Key Take-Away:** I learned that AI-generated code can create a false sense of understanding. The real skill is being able to test, verify, and explain the code. I also learned how `EXPLAIN QUERY PLAN` helps us understand query performance.
+- **Advice:** I should use AI as a tutor rather than an autopilot and make sure I understand the logic before submitting my work.
 
-Despite falling into that "AI trap" due to the strict deadline, there were highly satisfying moments and great hands-on exploration. Setting up the massive 240,000-row `warehouse.db` and watching the execution plans change in real-time was fascinating. Benchmarking the indexes led to a massive "a-ha!" moment: I realized that adding an index doesn't magically speed up every query. For instance, the database completely ignored my new index on the dashboard query because the primary key was already faster. As an extra piece of work, I took the initiative to reorganize my entire repository into modular evidence files (`task1-profiling.md`, `bench.py`, etc.), which makes my portfolio feel significantly more professional.
+### What Was Good?
+- I enjoyed working with the 240,000-row `warehouse.db` database and watching query plans change during testing.
+- Benchmarking indexes was interesting because I discovered that adding an index does not always improve performance. The database sometimes preferred the primary key.
+- I also reorganised my repository into separate evidence files, making my portfolio more professional.
 
-My primary struggle was acknowledging that if an instructor asked me to explain the generated database logic from scratch, I would fail. I acted more like a project manager than an engineering student today. While there are no technical show-stoppers preventing me from progressing, this realization forces a necessary reset in my study habits for Module 4.
+### What Was Difficult & Where Did I Struggle?
+- My biggest difficulty was realising that I relied too much on AI and could not confidently explain all the generated database logic from scratch.
+- There were no major technical blockers, but I need to improve my understanding before Module 4.
 
-On a team level, our interaction was excellent, and our divide-and-conquer strategy paid off. We smoothly within the pod and collaborated with a guest member, Isa Babayev. Isa helped the group immensely by mapping out the exact relational algebra math for our notes. Sebastian took charge of Workstream 2, doing a great job clarifying how SQL's written order differs from its evaluated order, while Myo helped us navigate the tuning and security concepts. In return, I helped the pod by tackling the `EXPLAIN QUERY PLAN` vocabulary (`SCAN`, `SEARCH`, `COVERING`) and bringing those definitions back to the group. Because Jomarie was absent, we all made sure to meticulously document these findings in `sql-notes.md` to give him a clear, valuable paper trail to catch up on when he returns.
+### Peer Interaction & Teamwork
+- Our pod worked well using a divide-and-conquer approach. Isa helped with relational algebra, Sebastian explained SQL evaluation order, and Myo helped with query tuning and security.
+- I contributed by explaining `SCAN`, `SEARCH`, and `COVERING` from `EXPLAIN QUERY PLAN`. We also documented our findings in `sql-notes.md` so Jomarie could catch up after being absent.
+
+### Help & Extra Work
+- **Help received:** Isa, Sebastian, and Myo shared useful explanations with the group.
+- **Help given:** I explained query plan terminology to my teammates.
+- **Extra contributions:** I organised my repository into evidence files such as `task1-profiling.md` and `bench.py`, and helped document our group findings.
 
