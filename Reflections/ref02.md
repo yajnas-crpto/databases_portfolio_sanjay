@@ -1,13 +1,20 @@
-# Module 2 Reflection
+# Reflection 2 in Module 2
 
-My biggest takeaway from Module 2 is that reading and understanding a legacy database schema is just as critical as writing a new one. I had a major breakthrough in understanding how relational tables connect: realizing that a Foreign Key is simply a Primary Key visiting another table to create a link (like a product barcode sitting on a checkout receipt). My advice to myself is to always ground my understanding in these core physical structures rather than just staring at the raw SQL syntax.
+### Key Take-Away & Advice
+- **Key Take-Away:** I learned about entities, attributes, and relationships, and how these three work together when designing a database. I also learned how important different keys are and how they help maintain the structure and connections within a database.
+- **Advice:** Take time to understand ER diagrams and the role of each part. They make it easier to understand how a database is organised.
 
-What went really well this week was the technical execution. After all the environment and setup difficulties I had during Module 1, my VS Code and PC are now fully optimized. Because my local environment was already dialed in, running the Python data contract (Pydantic and SQLAlchemy) using `uv` to generate the repaired schema felt smooth and manageable. 
+### What Was Good?
+- I found creating and understanding ER diagrams interesting. I especially liked how Mermaid can turn text into diagrams. I also enjoyed learning about the different keys and how important they are for a database.
 
-The main difficulty for me was that I was out of town and absent for the live lecture. I proactively informed the professor about my absence, but missing the live pod discussion meant I had to grapple with the concepts on my own initially. I hit some PowerShell syntax errors when trying to build the `legacy.db` from the terminal, and I struggled at first to understand why a comma-separated list in the `parts_used` column was such a severe defect.
+### What Was Difficult & Where Did I Struggle?
+- It was difficult to catch up with Module 2 because I was unable to attend the class due to personal reasons. However, my teammates shared the relevant information with me, which helped me understand the work and continue with the tasks.
+- I also came across some errors while completing the tasks, but I was able to use AI effectively to understand and solve them.
 
-However, those struggles led to some great exploration. I figured out how to bypass the PowerShell errors by creating a dedicated `setup.sql` script instead of relying on the command line. It was also a massive "a-ha!" moment to finally understand that storing a list in a single column violates First Normal Form (1NF) and completely breaks standard SQL `JOIN` capabilities, silently dropping data.
+### Peer Interaction & Teamwork
+- We interacted within our Task Pod and helped each other whenever necessary. Most of the work was completed individually with the support of AI, but we still shared information and helped one another when needed.
 
-My interaction with my peers was incredibly valuable, even though it was asynchronous. I coordinated with my teammates over the week to catch up on everything I missed so I would be fully prepared for the upcoming Module 3 lecture. 
-
-In terms of help and extra work, my pod members helped me immensely by sharing their conceptual findings and Sebastian posted the final ER diagrams to our wataspp group, which allowed me to sync up and verify my independent work. To ensure I didn't fall behind due to my absence, I put in extra work by tackling both stretcher tasks, modeling EER inheritance two different ways and documenting a deep dive into Mermaid diagram edge cases.
+### Help & Extra Work
+- **Help received:** My teammates provided me with the information I had missed during the class, which helped me catch up with the module.
+- **Help given:** We supported each other within the pod whenever someone needed help.
+- **Contributions:** I worked through the individual tasks and used AI to help troubleshoot errors and complete the work.
